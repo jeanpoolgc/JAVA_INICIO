@@ -108,3 +108,27 @@ private Date altacontrato;
 
   
 }
+
+
+
+class Jefatura extends Empleado{
+   
+    public Jefatura(String nom,double sue, int agno,int mes,int dia){
+        
+    super(nom,sue,agno,mes,dia);    
+        
+    }
+    /** setter */
+    public void estableceIncentivo(double b){
+        incentivo=b;
+    } 
+    /**********/
+    /** getter */
+    public double dimeSueldo(){
+        double sueldoJefe=super.dimeSueldo();
+        return sueldoJefe + incentivo;
+    } 
+    /***********/  
+    private double incentivo;
+   
+}
