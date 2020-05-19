@@ -27,13 +27,21 @@ public class UsoEmpleado {
     System.out.println("Nombre :"+empleado2.dimeNombre() + " Sueldo: "+empleado2.dimeSueldo()+" Fecha Alta: "+empleado2.dameFechaContrato());
     System.out.println("Nombre :"+empleado3.dimeNombre() + " Sueldo: "+empleado3.dimeSueldo()+" Fecha Alta: "+empleado3.dameFechaContrato());
     */
-    
-    Empleado [] misEmpleados=new Empleado[4];
+    Jefatura jefe_RR=new Jefatura("Jeanpool",55000,2006,9,25);
+    jefe_RR.estableceIncentivo(2570);
+    Empleado [] misEmpleados=new Empleado[6];
     misEmpleados[0]=new Empleado("Paco Gomez",85000,1990,12,17);
     misEmpleados[1]=new Empleado("Ana Lopez",95000,1995,06,02);
     misEmpleados[2]=new Empleado("Maria Martin",105000,2002,03,15);
     misEmpleados[3]=new Empleado("Jeanpool Guerrero");
-   /** for(int i=0;i<3; i++){
+    misEmpleados[4]=jefe_RR;/**--Polimorfismo: Prinicipio de sustitucion*/
+    misEmpleados[5]=new Jefatura("Maria",95000,1999,5,26);
+    Jefatura jefa_Finanzas=(Jefatura)misEmpleados[5];/** CASTING CONVERTIR UN OBJETO A otro */
+    jefa_Finanzas.estableceIncentivo(55000);
+    
+    
+     
+    /** for(int i=0;i<3; i++){
         misEmpleados[i].subeSueldo(5);
         
     }
@@ -111,7 +119,7 @@ private Date altacontrato;
 
 
 
-class Jefatura extends Empleado{
+class Jefatura extends Empleado{    /** FINAL NO PODRA UTILIZAR NINGUN METODO  */
    
     public Jefatura(String nom,double sue, int agno,int mes,int dia){
         
